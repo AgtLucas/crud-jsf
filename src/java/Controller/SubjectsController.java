@@ -37,12 +37,12 @@ public class SubjectsController {
     
     public String prepareAddSubjects() {
         subjects = new Subjects();
-        return "manageSubjects";
+        return "manage-subjects";
     }
     
     public String prepareAlterSubjects() {
         subjects = (Subjects)(listSubjects.getRowData());
-        return "manageSubjects";
+        return "manage-subjects";
     }
     
     public String deleteSubjects() {
