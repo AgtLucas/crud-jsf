@@ -1,3 +1,4 @@
 /src/java/hibernate.cfg.xml
 build/web/WEB-INF/classes/hibernate.cfg.xml
 /build/web/WEB-INF/classes/hibernate.cfg.xml
+/dist/
