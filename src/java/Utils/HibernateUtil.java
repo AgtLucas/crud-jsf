@@ -1,6 +1,7 @@
 package Utils;
 
 import Model.Subjects;
+import org.hibernate.HibernateException;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.SessionFactory;
 
@@ -23,7 +24,7 @@ public class HibernateUtil {
                 Configuration ac = new Configuration();
                 ac.addAnnotatedClass(Subjects.class);
                 sessionFactory = ac.configure().buildSessionFactory();
-            } catch (Throwable ex) {
+            } catch (HibernateException ex) {
                 System.err.println("Initial Session creation failed :v" + ex);
                 throw new ExceptionInInitializerError(ex);
             }

@@ -30,7 +30,7 @@ public class SubjectsDaoImp implements SubjectsDao {
     public List<Subjects> list() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction t = session.beginTransaction();
-        List li = session.createQuery("from subjects").list();
+        List li = session.createQuery("from Subjects").list();
         t.commit();
         return li;
     }
