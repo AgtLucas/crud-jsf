@@ -1,14 +1,53 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<!DOCTYPE html>
+<html xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Gerenciador de Assuntos</title>
     </h:head>
     <h:body>
-        Hello from Facelets
+        <h1>Gerenciador de Assuntos</h1>
+        
+        <h:dataTable var="subjects" value="#{subjectsController.listSubjects}">
+            
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Nome" />
+                </f:facet>
+                <h:outputText value="#{subjects.name}" />
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Descrição" />
+                </f:facet>
+                <h:outputText value="#{subjects.description}" />
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Alterar" />
+                </f:facet>
+                <h:form>
+                    <h:commandButton action="#{subjectsController.prepareAlterSubjects}" value="Alterar" />
+                </h:form>
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Deletar" />
+                </f:facet>
+                <h:form>
+                    <h:commandButton action="#{subjectsController.deleteSubjects}" value="Deletar" />
+                </h:form>
+            </h:column>
+            
+        </h:dataTable>
+        
         <br />
-        <h:link outcome="welcomePrimefaces" value="Página de boas-vindas do Primefaces" />
+        
+        <h:form>
+            <h:commandLink value="Cadastrar Assunto" action="#{subjectsController.prepareAddSubjects}" />
+        </h:form>
+        
     </h:body>
 </html>
 
