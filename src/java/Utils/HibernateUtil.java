@@ -1,4 +1,4 @@
-package Dao;
+package Utils;
 
 import Model.Subjects;
 import org.hibernate.cfg.Configuration;

@@ -1,5 +1,6 @@
 package Dao;
 
+import Utils.HibernateUtil;
 import Model.Subjects;
 import java.util.List;
 import org.hibernate.Session;
