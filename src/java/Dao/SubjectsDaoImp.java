@@ -47,6 +47,7 @@ public class SubjectsDaoImp implements SubjectsDao {
     public void update(Subjects subjects) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction t = session.beginTransaction();
+        session.update(subjects);
         t.commit();
     }
     
