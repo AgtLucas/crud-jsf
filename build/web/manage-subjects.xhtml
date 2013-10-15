@@ -12,6 +12,11 @@
             Nome: <h:inputText value="#{subjectsController.subjects.name}" /><br />
             Descrição: <h:inputText value="#{subjectsController.subjects.description}" /><br />
             
+            <h:commandButton action="#{subjectsController.addSubjects}" value="Cadastrar Assunto"/>
+            <h:commandButton action="#{subjectsController.alterSubjetcs}" value="Alterar Assunto"/>
+            
+            <br/>
+            <h:commandLink action="index" value="Voltar"/>
         </h:form>
         
     </h:body>
